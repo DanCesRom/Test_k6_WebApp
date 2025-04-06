@@ -29,3 +29,23 @@ Existen diversos métodos para la instalación de estas herramientas, tanto como
 - Si usas el gestor de paquetes **Chocolatey** puedes instalar el paquete no oficial k6 con:
   ```bash
   choco install k6
+
+- Si usas el Administrador de Paquetes de Windows (Método usado):
+  ```bash
+   winget install k6 --source winget
+
+
+#### 2. Descargar y configurar Prometheus:
+
+- Descargar desde: https://prometheus.io/download/
+- Configurar el archivo prometheus.yml:
+
+- 
+
+
+
+
+
+
+
+
