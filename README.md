@@ -60,6 +60,24 @@ Existen diversos métodos para la instalación de estas herramientas, tanto como
 - Usuario: admin
 - Contraseña: admin
 
+#### 3. Descripción del Script de Prueba
 
+Este script simula 100 usuarios virtuales (VUs) que interactúan durante 30 segundos con una API web. Se incluyen validaciones y métricas clave. La prueba realiza tres pasos:
 
+1. GET al home del sitio.
+2. POST a un endpoint de login.
+3. GET a la página principal en caso de login exitoso.
 
+### Ejecución del Script
+
+3.2 Ejecución del Script
+Previo a ejecutar el script, asegúrate de que Prometheus y Grafana estén corriendo. Puedes confirmarlo accediendo a sus respectivas ubicaciones:
+
+- Prometheus: http://localhost:9090
+- Grafana: http://localhost:3000
+
+Si Grafana no está corriendo, usa el comando mencionado anteriormente. Si Prometheus aún no está en ejecución, ve al directorio donde se guarda el archivo .yaml de configuración y ejecuta el siguiente comando:
+    ```bash
+    prometheus.exe --config.file=prometheus.yml --web.enable-remote-write-receiver
+
+Esto asegurará que Prometheus se comunique correctamente con k6.
