@@ -34,17 +34,30 @@ Existen diversos métodos para la instalación de estas herramientas, tanto como
   ```bash
    winget install k6 --source winget
 
-
 #### 2. Descargar y configurar Prometheus:
 
 - Descargar desde: https://prometheus.io/download/
 - Configurar el archivo prometheus.yml:
+    ```bash
+   global:
+     scrape_interval: 1s  # Frecuencia de recolección de métricas
 
-- 
+   scrape_configs:
+     - job_name: 'k6'  # Nombre del trabajo para las métricas de k6
+       static_configs:
+         - targets: ['localhost:6000']  # Reemplazar con el endpoint de métricas de k6 si es necesario
 
+   remote_write:
+     - url: "http://localhost:9090/api/v1/write"  # Endpoint remoto de Prometheus
 
+#### 3. Instalar Grafana:
 
-
+- Descargar desde: [https://grafana.com/grafana/download](https://grafana.com/grafana/download)
+- De ser necesario, iniciarlo con:
+    ```bash
+   grafana-server
+- Acceder a Grafana en: http://localhost:3000
+  Usuario: admin, Contraseña: admin
 
 
 
