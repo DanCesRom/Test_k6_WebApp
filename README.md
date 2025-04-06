@@ -75,8 +75,21 @@ Previo a ejecutar el script, asegúrate de que Prometheus y Grafana estén corri
 
 - Prometheus: http://localhost:9090
 - Grafana: http://localhost:3000
-Si Grafana no está corriendo, usa el comando mencionado anteriormente. Si Prometheus aún no está en ejecución, ve al directorio donde se guarda el archivo .yaml de configuración y ejecuta el siguiente comando:
+
+- Si Grafana no está corriendo, usa el comando mencionado anteriormente. Si Prometheus aún no está en ejecución, ve al directorio donde se guarda el archivo .yaml de configuración y ejecuta el siguiente comando:
     ```bash
     prometheus.exe --config.file=prometheus.yml --web.enable-remote-write-receiver
 
 Esto asegurará que Prometheus se comunique correctamente con k6.
+
+- Para ejecutar el script, dirígete al directorio donde se encuentra el archivo y ejecuta el siguiente comando:
+    ```bash
+    k6 run test.js  # "test" será el nombre del archivo .js elegido
+    
+- También puedes generar un archivo JSON con los resultados:
+    ```bash
+  k6 run --out json=resultado.json test.js  # "test" será el nombre del archivo .js elegido
+
+- En este caso, como utilizamos Prometheus y Grafana, utilizaremos el siguiente comando:
+    ```bash
+    k6 run --out experimental-prometheus-rw=http://localhost:9090/api/v1/write test.js
