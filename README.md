@@ -75,7 +75,6 @@ Previo a ejecutar el script, asegúrate de que Prometheus y Grafana estén corri
 
 - Prometheus: http://localhost:9090
 - Grafana: http://localhost:3000
-
 Si Grafana no está corriendo, usa el comando mencionado anteriormente. Si Prometheus aún no está en ejecución, ve al directorio donde se guarda el archivo .yaml de configuración y ejecuta el siguiente comando:
     ```bash
     prometheus.exe --config.file=prometheus.yml --web.enable-remote-write-receiver
