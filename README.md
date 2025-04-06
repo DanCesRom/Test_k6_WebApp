@@ -59,7 +59,6 @@ Existen diversos métodos para la instalación de estas herramientas, tanto como
 - Acceder a Grafana en: http://localhost:3000
 - Usuario: admin
 - Contraseña: admin
-
 #### 3. Descripción del Script de Prueba
 
 Este script simula 100 usuarios virtuales (VUs) que interactúan durante 30 segundos con una API web. Se incluyen validaciones y métricas clave. La prueba realiza tres pasos:
