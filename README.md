@@ -57,7 +57,8 @@ Existen diversos métodos para la instalación de estas herramientas, tanto como
     ```bash
    grafana-server
 - Acceder a Grafana en: http://localhost:3000
-- Usuario: admin, Contraseña: admin
+- Usuario: admin
+- Contraseña: admin
 
 
 
